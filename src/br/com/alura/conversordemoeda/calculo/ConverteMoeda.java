@@ -32,6 +32,8 @@ public class ConverteMoeda {
             System.out.println("Response com o resultado da conversao de moeda: ");
             System.out.println(jsonResponse);
 
+
+
         } catch (Exception e) {
             System.out.println("            ACONTECEU UM ERRO");
             System.out.println(e.getMessage());
