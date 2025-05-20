@@ -12,7 +12,7 @@ public class Main {
         int converterValor;
 
         while (true) {
-            System.out.println("=========================================");
+            System.out.println("=================================================");
             System.out.println("Conversor de Moedas: ");
             System.out.println("""
                 1) Dolar --> Peso argentino
@@ -23,18 +23,24 @@ public class Main {
                 6) Peso colombiano --> Dolar
                 7) Sair """);
 
-            System.out.print("Digite um número de uma das opções acima: ");
+            System.out.print("Digite somente um número de uma das opções acima: ");
             moedaEscolhida = scanner.nextInt();
 
             if (moedaEscolhida == 7){
-                System.out.println("=========================================");
+                System.out.println("=================================================");
                 break;
             } else {
                 Moeda moeda = new Moeda(moedaEscolhida);
-                System.out.print("Digite o valor que deseja converter: ");
-                converterValor = scanner.nextInt();
-                ConverteMoeda converteMoeda = new ConverteMoeda(converterValor, moeda);
-                converteMoeda.converterMoeda();
+
+                if (moeda.verificaMoedaEscolhida()){
+                    System.out.print("Digite o valor que deseja converter: ");
+                    converterValor = scanner.nextInt();
+                    ConverteMoeda converteMoeda = new ConverteMoeda(converterValor, moeda);
+                    converteMoeda.converterMoeda();
+                } else {
+                    System.out.println("=================================================");
+                    break;
+                }
             }
         }
 
