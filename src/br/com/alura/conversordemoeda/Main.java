@@ -1,11 +1,14 @@
 package br.com.alura.conversordemoeda;
 
+import br.com.alura.conversordemoeda.calculo.ConverteMoeda;
+import br.com.alura.conversordemoeda.modelo.Moeda;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int opcaoEscolhida;
+        int moedaEscolhida;
         int converterValor;
 
         while (true) {
@@ -21,14 +24,17 @@ public class Main {
                 7) Sair """);
 
             System.out.print("Digite um número de uma das opções acima: ");
-            opcaoEscolhida = scanner.nextInt();
+            moedaEscolhida = scanner.nextInt();
 
-            if (opcaoEscolhida == 7){
+            if (moedaEscolhida == 7){
                 System.out.println("=========================================");
                 break;
             } else {
+                Moeda moeda = new Moeda(moedaEscolhida);
                 System.out.print("Digite o valor que deseja converter: ");
                 converterValor = scanner.nextInt();
+                ConverteMoeda converteMoeda = new ConverteMoeda(converterValor, moeda);
+                converteMoeda.converterMoeda();
             }
         }
 
