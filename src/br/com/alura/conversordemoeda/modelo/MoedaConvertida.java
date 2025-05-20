@@ -1,4 +1,4 @@
 package br.com.alura.conversordemoeda.modelo;
 
-public record MoedaConvertida(String base_code, String target_code, int conversion_rate, int conversion_result) {
+public record MoedaConvertida(String baseCode, String targetCode, String conversionRate, String conversionResult) {
 }

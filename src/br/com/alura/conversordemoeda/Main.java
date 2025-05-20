@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int moedaEscolhida;
-        int converterValor;
+        double converterValor;
 
         while (true) {
             System.out.println("=================================================");
@@ -37,6 +37,7 @@ public class Main {
                     converterValor = scanner.nextInt();
                     ConverteMoeda converteMoeda = new ConverteMoeda(converterValor, moeda);
                     converteMoeda.converterMoeda();
+                    System.out.println(converteMoeda);
                 } else {
                     System.out.println("=================================================");
                     break;
