@@ -11,12 +11,28 @@ public class Moeda {
 
     public boolean verificaMoedaEscolhida(){
         switch(moedaEscolhida){
+            case 1 -> {
+                moedaBase = "USD";
+                moedaObjetivo = "ARS";
+            }
+            case 2 -> {
+                moedaBase = "ARS";
+                moedaObjetivo = "USD";
+            }
             case 3 -> {
                 moedaBase = "USD";
                 moedaObjetivo = "BRL";
             }
             case 4 -> {
                 moedaBase = "BRL";
+                moedaObjetivo = "USD";
+            }
+            case 5 -> {
+                moedaBase = "USD";
+                moedaObjetivo = "COP";
+            }
+            case 6 -> {
+                moedaBase = "COP";
                 moedaObjetivo = "USD";
             }
             default -> {
