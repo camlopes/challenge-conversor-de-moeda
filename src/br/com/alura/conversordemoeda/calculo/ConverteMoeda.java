@@ -22,6 +22,7 @@ public class ConverteMoeda {
     }
 
     public void converterMoeda() {
+        //Colocar a sua chave de acesso para a API ExchangeRate
         String apiSenha = "";
         String endereco = "https://v6.exchangerate-api.com/v6/" + apiSenha + "/pair/" + moeda.getMoedaBase() + "/" +  moeda.getMoedaObjetivo() + "/" + converterValor;
         Gson gson = new GsonBuilder()
