@@ -14,7 +14,7 @@ import java.net.http.HttpResponse;
 public class ConverteMoeda {
     private double converterValor;
     private Moeda moeda;
-    private String resultadoDaConversao = "";
+    private MoedaConvertida moedaConvertida;
 
     public ConverteMoeda(double converterValor, Moeda moeda){
         this.converterValor = converterValor;
@@ -37,8 +37,7 @@ public class ConverteMoeda {
                     .send(request, HttpResponse.BodyHandlers.ofString());
             String jsonResponse = response.body();
 
-            MoedaConvertida moedaConvertida = gson.fromJson(jsonResponse, MoedaConvertida.class);
-            resultadoDaConversao = moedaConvertida.conversionResult();
+            moedaConvertida = gson.fromJson(jsonResponse, MoedaConvertida.class);
 
         } catch (Exception e) {
             System.out.println("            ACONTECEU UM ERRO");
@@ -49,6 +48,6 @@ public class ConverteMoeda {
     @Override
     public String toString(){
         return "Valor de " + converterValor + " [" + moeda.getMoedaBase() + "] " +
-                "corresponde ao valor final de --> " + resultadoDaConversao + " [" + moeda.getMoedaObjetivo() + "]";
+                "corresponde ao valor final de --> " + moedaConvertida.conversionResult() + " [" + moeda.getMoedaObjetivo() + "]";
     }
 }
